@@ -1,0 +1,43 @@
+﻿@model IEnumerable<UTB.Eshop.Web.Models.Entities.Coupon>
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<h1>Events</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table CarouselItem">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Sale)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+            <th>Edit</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Sale) %</td>
+            <td>
+            @{
+                if(@item.Status == "1") {
+                    <p>@Html.DisplayFor(modelItem => item.Status) - <i>Active</i></p>
+                } else {
+                    <p>@Html.DisplayFor(modelItem => item.Status) - <i>Inactive</i></p>
+                }
+            }
+            </td>
+                <td><a asp-action="Edit" asp-route-id="@item.ID">Edit</a></td>
+                <td><a asp-action="Details" asp-route-id="@item.ID">Details</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.ID">Delete</a></td>
+        </tr>
+}
+    </tbody>
+</table>

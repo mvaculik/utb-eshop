@@ -1,0 +1,15 @@
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Domain.Implementation.deps.json
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Domain.Implementation.dll
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\bin\Debug\net5.0\ref\UTB.Eshop.Domain.Implementation.dll
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Domain.Implementation.pdb
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Domain.Abstraction.dll
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\bin\Debug\net5.0\UTB.Eshop.Domain.Abstraction.pdb
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.csproj.AssemblyReference.cache
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.AssemblyInfoInputs.cache
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.AssemblyInfo.cs
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.csproj.CoreCompileInputs.cache
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.csproj.CopyComplete
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.dll
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\ref\UTB.Eshop.Domain.Implementation.dll
+C:\Users\matyv\OneDrive\Plocha\UTB.Eshop.ctvrtek12\UTB.Eshop.Domain.Implementation\obj\Debug\net5.0\UTB.Eshop.Domain.Implementation.pdb

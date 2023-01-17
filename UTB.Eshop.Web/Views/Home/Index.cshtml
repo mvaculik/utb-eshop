@@ -1,0 +1,224 @@
+﻿
+@model HomeIndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var sale = 0;
+}
+
+<div class="text-center">
+   
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+@{
+
+    if (Model != null && Model.CarouselItems.Count > 0)
+    {
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @{
+                    for (int i = 0; i < Model.CarouselItems.Count; ++i)
+                    {
+                        string ActiveClass = String.Empty;
+                        if (i == 0)
+                        {
+                            ActiveClass = "class=active";
+                        }
+                        <li data-target="#carouselExampleIndicators" data-slide-to="@i" @ActiveClass></li>
+                    }
+                }
+            </ol>
+            <div class="carousel-inner">
+                @{
+                    for (int i = 0; i < Model.CarouselItems.Count; ++i)
+                    {
+                        string ActiveClass = String.Empty;
+                        if (i == 0)
+                        {
+                            ActiveClass = "active";
+                        }
+                        <div class="carousel-item @ActiveClass">
+                            <img class="d-block w-100" src="@Model.CarouselItems[i].ImageSrc" alt="@Model.CarouselItems[i].ImageAlt">
+                        </div>
+                    }
+                }
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    }
+}
+
+<div class="benefits">
+    <h1>Special offer today</h1>
+        @{
+     
+            foreach (var coupon in Model.Coupons)
+            {
+                if (@coupon.Status == "1") {
+                   
+                    <p>There is <i>@coupon.Name</i> with @coupon.Sale % off!</p>
+                  
+                }
+            
+            
+            }
+
+         }
+
+
+    
+
+   
+
+</div>
+
+@{
+    if (Model != null && Model.Products != null && Model.Products.Count > 0)
+    {
+        <table class="table products">
+            <thead>
+                <tr class="menu">
+                    <th scope="col">
+                        <h1>Products</h1>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var product in Model.Products)
+                    {
+
+                    var originPrice = @product.Price;
+                    sale = 0;
+
+                        <tr>
+                      
+                            <td class="p-name">@product.Name</td>
+                            <td><img style="width: 15rem;" src="@product.ImageSrc" alt="icon" /></td>
+                            <td class="p-price" ><span id="originprice">@product.Price Kč</span>
+
+                         @{
+                            foreach (var user in Model.Users)
+                            {
+
+                                        if(@User.Identity.Name == @user.UserName) {
+                                    
+                                                foreach (var group in Model.Groups)
+                                                {
+
+                                                    if(@user.Groupname == "Student" && @group.Name == "Student") {
+                                                        sale += @group.Sale;
+                                              
+                                                        <!--  <span>/ @group.Name - @group.Sale %</span> -->
+                                                
+                                                    }
+
+                                                    if(@user.Groupname == "VIP" && @group.Name == "VIP") {
+                                                        sale += @group.Sale;
+                                              
+                                                        <!--  <span>/ @group.Name - @group.Sale %</span>
+                                                     <span>@group.Name price  @(@product.Price - ((@product.Price*@group.Sale)/100)) Kč</span> -->
+                                                
+                                                    }
+                                
+                                                }
+                                    
+                                        }
+
+                                        }
+                                        foreach (var coupon in Model.Coupons)
+                                        {
+                                            if (@coupon.Status == "1") {
+                                                sale += @coupon.Sale;
+                                               <!-- <span>/ @coupon.Name - @coupon.Sale %</span> -->
+                  
+                                            }
+            
+            
+                                        }
+
+                                
+                             }
+                        
+                             @(@product.Price - ((@product.Price * @sale)/100)) Kč</td>
+
+                            <td class="p-btn column-butten-custom">
+                            <div class="sales">
+                              @{
+                                    foreach (var user in Model.Users)
+                                    {
+                                        if(@User.Identity.Name == @user.UserName) 
+                                        {
+
+                                            foreach (var group in Model.Groups)
+                                            {
+
+                                                    if(@user.Groupname == "Student" && @group.Name == "Student") {
+                                              
+                                                         <span><i class="fas fa-user-graduate"></i> @group.Name - @group.Sale %</span>
+                                                
+                                                    }
+
+                                                    if(@user.Groupname == "VIP" && @group.Name == "VIP") {
+                                   
+                                              
+                                                        <span><i class="fas fa-award"></i> @group.Name - @group.Sale %</span>
+                                                
+                                                    }
+                                            }
+
+                                        }
+
+                                    }
+
+
+                                    foreach (var coupon in Model.Coupons)
+                                        {
+                                            if (@coupon.Status == "1") {
+                                               <span><i class="fas fa-gift"></i> @coupon.Name - @coupon.Sale %</span>
+                                            }
+            
+            
+                                        }
+
+                            }
+
+                              
+                                    </div>
+                                    @{
+                                        @if (User.Identity.IsAuthenticated == true) {
+                                    
+                                            <button type="button" id="product-btn" class="btn btn-danger" onclick="Buy(@product.ID,'@Url.Action("AddOrderItemsToSession", "CustomerOrderNotCart", new { Area = "Customer" })', '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name', @sale)">Add to cart</button>
+                                        } else {
+                                            <button type="button" id="product-btn" class="btn btn-danger" style="opacity: 0.5 !important; cursor: not-allowed !important;" disabled onclick="Buy(@product.ID,'@Url.Action("AddOrderItemsToSession", "CustomerOrderNotCart", new { Area = "Customer" })', '#total_price', '@System.Globalization.CultureInfo.CurrentCulture.Name', @sale)">Add to cart</button>
+                                        }
+                                    
+                                    }
+                                    </td>
+                                 
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    }
+}
+
+@section Scripts
+{
+    <environment include="Development">
+        <script src="~/js/Product.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/Product.min.js"></script>
+    </environment>
+}

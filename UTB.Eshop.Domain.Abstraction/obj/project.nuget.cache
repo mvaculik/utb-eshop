@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "YHZg+TP+VdbSS908VVehkTXT5rV8OlLECp8qN/VbUyndUMDaOW0H4ZqA0XjmuDQ/5+Idm9jkzRfwbLojlxXA5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\matyv\\OneDrive\\Plocha\\UTB.Eshop.ctvrtek12\\UTB.Eshop.Domain.Abstraction\\UTB.Eshop.Domain.Abstraction.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\matyv\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\matyv\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\matyv\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
